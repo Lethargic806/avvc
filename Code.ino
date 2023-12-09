@@ -1,15 +1,15 @@
 #include <NewPing.h>
 
 #define TRIGGER_PIN_FRONT  2
-#define ECHO_PIN_FRONT     3
-#define TRIGGER_PIN_LEFT   4
-#define ECHO_PIN_LEFT      5
+#define ECHO_PIN_FRONT     2
+#define TRIGGER_PIN_LEFT   3
+#define ECHO_PIN_LEFT      3
 #define MAX_DISTANCE       200
 
-#define MOTOR_LEFT_FORWARD  8
-#define MOTOR_LEFT_BACKWARD 9
-#define MOTOR_RIGHT_FORWARD 10
-#define MOTOR_RIGHT_BACKWARD 11
+#define MOTOR_LEFT_FORWARD  4
+#define MOTOR_LEFT_BACKWARD 5
+#define MOTOR_RIGHT_FORWARD 6
+#define MOTOR_RIGHT_BACKWARD 7
 
 NewPing sonarFront(TRIGGER_PIN_FRONT, ECHO_PIN_FRONT, MAX_DISTANCE);
 NewPing sonarLeft(TRIGGER_PIN_LEFT, ECHO_PIN_LEFT, MAX_DISTANCE);
@@ -71,15 +71,11 @@ void loop() {
   Serial.println(" cm");
 
   if (frontDistance < 20) {
-    stopMotors();
-    delay(500);
     turnLeft();
-    delay(1000);
+    delay(100);
   } else if (leftDistance < 20) {
-    stopMotors();
-    delay(500);
     turnRight();
-    delay(1000);
+    delay(100);
   } else {
     moveForward();
   }
