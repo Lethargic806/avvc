@@ -1,9 +1,9 @@
 #include <NewPing.h>
 
-#define TRIGGER_PIN_FRONT  2
-#define ECHO_PIN_FRONT     2
-#define TRIGGER_PIN_LEFT   3
-#define ECHO_PIN_LEFT      3
+#define SENS_PIN_FRONT1  3
+#define SENS_PIN_LEFT   9
+#define SENS_PIN_RIGHT     2
+#define SENS_PIN_FRONT2 8
 #define MAX_DISTANCE       200
 
 #define MOTOR_LEFT_FORWARD  4
